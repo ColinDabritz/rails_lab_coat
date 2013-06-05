@@ -11,11 +11,12 @@ kickstart:
 * ./build.sh
 * move ./rails_lab_coat anywhere you want
 * in rails_lab_coat
-** vagrant up
-** vagrant ssh
-** cd /vagrant
-** rails new my_lab
-** rails server
-** http://localhost:3000
+ * vagrant up
+ * vagrant ssh
+ * cd /vagrant
+ * rails new my_lab
+ * cd my_lab
+ * rails server
+ * http://localhost:3000
 
 TODO: Better readme! (isn't this always the case?)
