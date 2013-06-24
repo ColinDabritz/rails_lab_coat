@@ -15,7 +15,8 @@ Requires:
 
 Installers may be provided on the same thumb drive
 
-End users:
+End users
+---------
 * ensure you have install the pre-requisites
 * copy the rails_lab_coat folder from the provided thumb drive to your computer (if this isn't provided, you may need to create your own, which is more complicated. See "build" section below.)
 * open that path in a terminal window (command prompt)
@@ -53,7 +54,8 @@ When a VM is running, for example after 'vagrant up', it consumes resources, esp
 If the virtual machine is in a bad state, just remember: vagrant destroy && vagrant up
 This command resets the VM to it's "factory default", although it will keep your shared directory.
 
-Build:
+Build Process
+-------------
 The respository here provides the tools to create a rails_lab_coat folder with a pre-made vagrant box file and vagrant file to set up a virtual machine ready for ruby-on-rails development. It was build for weekly user group use, and is intended to be rebuilt for each event to keep the system current.
 
 This build script has worked on an OSX Mountain Lion laptop with git, virtual box, and vagrant installed. It may work on a similarly configured linux machine, but it has not been tested. The primary script is a bash script and will probably not work on windows.
