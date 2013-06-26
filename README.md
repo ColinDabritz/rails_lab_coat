@@ -21,19 +21,19 @@ End users
 * copy the rails_lab_coat folder from the provided thumb drive to your computer (if this isn't provided, you may need to create your own, which is more complicated. See "build" section below.)
 * open that path in a terminal window (command prompt)
 * bring the virtual machine (VM) online, and get rails running these commands:
-  * vagrant up
-    * adds the virtual machine to VirtualBox, brings it online. This command copies the box file and will take quite a while to complete.
-  * vagrant ssh
-    * gives 'remote' access to the virtual machines command line
-  * cd /vagrant
-    * switches to the shared directory (todo: fix this step, should be default directory)
-  * rails new my_lab
-    * creates a new default rails app in my_lab (or any name of choice) (todo: include a default rails app, fix this step)
-  * cd my_lab (todo: update when fixed)
-    * changes the directory (cd) into your newly created rails application
-  * rails server
-    * starts the rails server, hosting the application
-  * open the local rails url in a browser on your main computer: http://localhost:3000
+    * vagrant up
+        * adds the virtual machine to VirtualBox, brings it online. This command copies the box file and will take quite a while to complete.
+    * vagrant ssh
+        * gives 'remote' access to the virtual machines command line
+    * cd /vagrant
+        * switches to the shared directory (todo: fix this step, should be default directory)
+    * rails new my_lab
+        * creates a new default rails app in my_lab (or any name of choice) (todo: include a default rails app, fix this step)
+    * cd my_lab (todo: update when fixed)
+        * changes the directory (cd) into your newly created rails application
+    * rails server
+        * starts the rails server, hosting the application
+    * open the local rails url in a browser on your main computer: http://localhost:3000
 
 This should open the rails application, displaying the default rails welcome page. If this isn't working for you, check that you followed each the steps.
 
