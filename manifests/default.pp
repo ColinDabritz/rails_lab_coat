@@ -16,18 +16,26 @@ class { 'apt_get_update':
   stage => preinstall
 }
 
-package { [ 'build-essential', 
-'zlib1g-dev', 
-'libssl-dev', 
-'libreadline-dev', 
-'git-core', 
-'libxml2', 
-'libxml2-dev', 
+# install RVM prereq packages
+package { [ 'build-essential',
+'zlib1g-dev',
+'libssl-dev',
+'libreadline-dev',
+'git-core',
+'libxml2',
+'libxml2-dev',
 'libxslt1-dev',
 'sqlite3',
 'libsqlite3-dev',
-'nodejs']:
+'nodejs',
+]:
 ensure => installed,
+}
+
+# install watchr gem
+package { 'watchr':
+    ensure   => 'installed',
+    provider => 'gem',
 }
 
 # RMagick system dependencies
