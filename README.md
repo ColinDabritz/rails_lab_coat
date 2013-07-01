@@ -132,6 +132,6 @@ Here are some errors we've encountered, and related fixes:
   * TODO: Remove this after some time has passed
 * I have a messed up 'railslab' box and/or vagrant (in theory)
     * try removing them and reinstalling
-      * vagrant destory (just in case)
-      * vagrant box remove labcoat virtualbox
+      * ./clean.sh
+      * ./remove_boxes.sh
       * rm -rf .vagrant
