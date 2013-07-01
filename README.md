@@ -6,6 +6,7 @@ Tools for doing rails science! (and cleaning up after yourself)
 The purpose of lab coat is to provide an easy, safe learning environment for ruby on rails. We found that often new developers in our rails community spent thier entire first evening just atempting to get a working rails environment on their computers, and even then many were unsuccessful. Lab coat can get a new developer running rails in less than 10 minutes (a bit longer if they are unfamiliar with the command line). Later on, once they are more familiar with the environment, and tools, they can transition to a 'native' install on their main system with much more confidence and explore from there. It also provides a nice 'baseline' environment for experimentation, or teaching in a computer lab environment.
 
 Requires:
+
 * VirtualBox
   * https://www.virtualbox.org/
 * vagrant
@@ -61,6 +62,7 @@ The respository here provides the tools to create a rails_lab_coat folder with a
 This build script has worked on an OSX Mountain Lion laptop with git, virtual box, and vagrant installed. It may work on a similarly configured linux machine, but it has not been tested. The primary script is a bash script and will probably not work on windows.
 
 Steps:
+
 * clone or otherwise download the responsitory:
   * git clone git@github.com:ColinDabritz/rails_lab_coat.git
   * cd rails_lab_coat
@@ -82,6 +84,7 @@ Steps:
 * Don't forget to update the image for each event!
 
 This VM provides:
+
 * Ruby (Recent MRI version, >= 2.0.0)
 * Rails, gems
 * RVM
@@ -99,6 +102,7 @@ This VM provides:
   * transition guideance for your own environment?
 
 This VM does NOT provide:
+
 * A wide variety of configurations, such as multiple databases
 * Deployment tools
 * Your favorite plugins/tweaks etc, it is mainly stock by intention
@@ -112,6 +116,7 @@ Let me know what I forgot!
 Issues - troubleshooting
 ------
 Here are some errors we've encountered, and related fixes:
+
 * vagrant - command not found
   * did you restart your terminal (command line) after installing?
   * did you install vagrant as a prerequisite?

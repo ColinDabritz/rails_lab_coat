@@ -33,10 +33,11 @@ ensure => installed,
 }
 
 # install watchr gem
-package { 'watchr':
-    ensure   => 'installed',
-    provider => 'gem',
-}
+# Appears non functional?
+# package { 'watchr':
+#     ensure   => 'installed',
+#     provider => 'gem',
+# }
 
 # RMagick system dependencies
 package { ['libmagickwand4', 'libmagickwand-dev']:
