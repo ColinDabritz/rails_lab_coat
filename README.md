@@ -131,7 +131,7 @@ Here are some errors we've encountered, and related fixes:
   * Workarounds are listed in the ticket, e.g. uninstall VirtualBox and resintall an older version
   * TODO: Remove this after some time has passed
 * I have a messed up 'railslab' box and/or vagrant (in theory)
-    * try removing them and reinstalling
+    * try removing the virtual machines and backing boxes
       * ./clean.sh
       * ./remove_boxes.sh
-      * rm -rf .vagrant
+      * start your build over again
