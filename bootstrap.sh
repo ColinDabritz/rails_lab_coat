@@ -1,31 +1,35 @@
 #!/usr/bin/env bash
 
 echo bootstrap.sh provisioning starting...
+# This bootstrap script is meant to be executed as part
+# of a vagrant provisioning process, in the context of the guest VM
 
-if [ -e "/home/vagrant/.rvm" ]  #only run RVM once 
+if [ -e "/home/vagrant/.rvm" ]  #only run RVM once
 then
 	echo "RVM already installed"
 else
 
 	echo rvm magic...
-	
+
 	# RVM official install command (from https://rvm.io/):
 	# \curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
 	# -s (=silent_ and --quiet-curl removes progress bars
-	## TODO: Still getting spam after 
+	## TODO: Still getting spam after
 	## ruby-2.0.0-p195 - #downloading ruby-2.0.0-p195, this may take a while depending on your connection...
 	# these don't behave well and spam the console durring vagrant provisioning
 	# todo: Still not completely silent gets?
 	# su to run as vagrant, this prevents issues using gems later e.g.
-	# Errno::EACCES: Permission denied 
+	# Errno::EACCES: Permission denied
 	# - /usr/local/rvm/gems/ruby-2.0.0-p195/build_info/coffee-script-source-1.6.2.info
 
 	su -l vagrant -c '\curl -s -L https://get.rvm.io | bash -s stable --rails --quiet-curl --autolibs=enabled'
 
+	# TODO: Heroku toolbelt?
+
 	echo cleanup
 	# fix profile snafu, RVM drops path adjustment into users bash profile, overriding profile
 	# include .profile in .bash_profile
-	
+
 	# including .profile in bootup, .bash_profile if it exists, or .bash_login
 	echo "source ~/.profile" >> /home/vagrant/.bash_profile
 

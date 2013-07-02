@@ -10,5 +10,8 @@ if [ -d "rails_lab_coat" ]; then
 	rm -rf ./rails_lab_coat
 fi
 
+# remove koans build folder
+rm -rf ./ruby_koans
+
 # remove the lab base box
 vagrant box remove railslab virtualbox

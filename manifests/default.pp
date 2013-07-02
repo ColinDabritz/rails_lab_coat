@@ -5,10 +5,13 @@ stage { 'preinstall':
   before => Stage['main']
 }
 
+# TODO: This command causes timeout errors. Distribute to update 
+# key packages? Upgrade last? upgrade in script phase?
 # updates AND upgrades box (for weekly updates)
 class apt_get_update {
   exec { '/usr/bin/apt-get -y update && /usr/bin/apt-get -y dist-upgrade':
-    user => 'root'
+    user => 'root',
+    timeout => 900 # temporary fix, 15 minute timeout
   }
 }
 
@@ -32,7 +35,8 @@ package { [ 'build-essential',
 ensure => installed,
 }
 
-#install watchr gem
+# install watchr gem
+# todo: sinatra?
 package { 'watchr':
     ensure   => 'installed',
     provider => 'gem',

@@ -16,17 +16,14 @@ vagrant ssh -c "sudo rm /home/vagrant/*gz"
 vagrant ssh -c "sudo dd if=/dev/zero of=/EMPTY bs=1M"
 vagrant ssh -c "sudo rm -rf /EMPTY"
 
-echo == packaging image ==
 vagrant halt
+echo == packaging image ==
 
 # copy template to final destination
 cp -r ./labtemplate ./rails_lab_coat
 
 # package box file into final destination
 vagrant package --output ./rails_lab_coat/box/railslab.box
-# todo: copy ruby koans to shared directory
-# todo: default rails app? TBD
 
-echo =====================================
-echo == rails lab is ready for science! ==
-echo =====================================
+#add ruby koans
+./add_koans.sh
