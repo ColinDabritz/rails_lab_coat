@@ -32,12 +32,11 @@ package { [ 'build-essential',
 ensure => installed,
 }
 
-# install watchr gem
-# Appears non functional?
-# package { 'watchr':
-#     ensure   => 'installed',
-#     provider => 'gem',
-# }
+#install watchr gem
+package { 'watchr':
+    ensure   => 'installed',
+    provider => 'gem',
+}
 
 # RMagick system dependencies
 package { ['libmagickwand4', 'libmagickwand-dev']:

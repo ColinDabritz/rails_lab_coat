@@ -1,14 +1,7 @@
 # todo: Sepparate script to remove boxes
 
-# if the rails_lab_coat directory exists
-if [ -d "rails_lab_coat" ]; then
-	#remove the generated virtual machine
-	echo removing generated virtual machine
-	(cd rails_lab_coat; vagrant destroy -f)
-
-	# delete output copy
-	rm -rf ./rails_lab_coat
-fi
+echo removing generated and packaged virtual machine
+./clean_packaged.sh
 
 # remove the build template virtual machine
 echo removing template virtual machine
