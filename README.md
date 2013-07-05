@@ -27,10 +27,10 @@ End users
     * vagrant ssh
         * gives 'remote' access to the virtual machines command line
     * cd /vagrant
-        * switches to the shared directory (todo: fix this step, should be default directory)
+        * switches to the shared directory
     * rails new my_lab
-        * creates a new default rails app in my_lab (or any name of choice) (todo: include a default rails app, fix this step)
-    * cd my_lab (todo: update when fixed)
+        * creates a new default rails app in my_lab (or any name of choice)
+    * cd my_lab
         * changes the directory (cd) into your newly created rails application
     * rails server
         * starts the rails server, hosting the application
@@ -68,9 +68,9 @@ Steps:
   * cd rails_lab_coat
 * run the build script
   * ./build.sh
-    * (TODO: may need execute permissions? chmod +x build.sh)
+    * (d: may need execute permissions? chmod +x build.sh)
   * the build script will take quite a while to run, and includes many steps:
-    * downloading the base puppet machine (if needed) (todo: is this being updated? how?)
+    * downloading the base puppet machine (if needed)
     * setting up the machine, including a full apt-get upgrade
     * installing rails using rvm with the classic http://rvm.io/ script
     * Removing empty space and preparing the box for packaging
@@ -87,29 +87,23 @@ This VM provides:
 
 * Ruby (Recent MRI version, >= 2.0.0)
 * Rails, gems
+* Sinatra
 * RVM
-* Standard development tools
+* development tools
   * git
-  * (todo: what else should be here?)
+  * heroku toolbelt
+* Ruby Koans
 * To be added:
-  * Ruby Koans (http://rubykoans.com/ , direct from git? other source? - in shared directory!)
-  * Hartl Tutorial Compatability (todo: probably already ok, check this)
-  * default rails project? (in shared directory, or is creating your own better?)
+  * Full Hartl Tutorial Compatability
   * watchr (to run koans, nice tool)
-  * (testing frameworks, rspec?)
-  * editors (emacs, vim, pico, other?)
-  * debugging tools?
-  * transition guideance for your own environment?
 
 This VM does NOT provide:
 
 * A wide variety of configurations, such as multiple databases
-* Deployment tools
 * Your favorite plugins/tweaks etc, it is mainly stock by intention
 * Specialized software for particular training
 
 These are great things to have, but distract from the main goal of a simple starter environment. These may be added to your own machine once you learn to manage an environment, or you are welcome to fork the repository and create VM customizations for your own lab use.
-(todo: break scripts up into phases so you can 'build', then customize by hand, then 'package'? provide hooks for a variation script?)
 
 Let me know what I forgot!
 
@@ -120,7 +114,7 @@ Here are some errors we've encountered, and related fixes:
 * vagrant - command not found
   * did you restart your terminal (command line) after installing?
   * did you install vagrant as a prerequisite?
-* (vagrant without VirtualBox - todo: what error does this give?)
+* (vagrant without VirtualBox - What error does this give?)
   * did you install VirtualBox as a prerequisite?
 * My machine is really slow even when I'm not using rails
   * the virtual machine consumes resoruces as long as it is on. After using the machine try: vagrant suspend
@@ -129,7 +123,6 @@ Here are some errors we've encountered, and related fixes:
   * This was a temporary issue in version 4.2.14 see ticket
   * https://www.virtualbox.org/ticket/11895
   * Workarounds are listed in the ticket, e.g. uninstall VirtualBox and resintall an older version
-  * TODO: Remove this after some time has passed
 * I have a messed up 'railslab' box and/or vagrant (in theory)
     * try removing the virtual machines and backing boxes
       * ./clean.sh

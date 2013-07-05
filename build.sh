@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO: Check all return statuses for errors, abort if so
-#       Note: may need to do so recursively in all scripts
-
 echo == Cleanup Phase ==
 echo cleaning up previous builds
 ./clean.sh

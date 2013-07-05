@@ -3,6 +3,7 @@
 # Jim Weirich's advice
 # requires at least git and rake
 
+echo == installing ruby koans ==
 #clone (if they don't already exist)
 [ ! -d ./ruby_koans ] && git clone https://github.com/neo/ruby_koans.git
 

@@ -1,5 +1,3 @@
-# todo: Sepparate script to remove boxes
-
 echo removing generated and packaged virtual machine
 ./clean_packaged.sh
 
