@@ -26,14 +26,15 @@ else
 	# bash -s stable --rails --quiet-curl --autolibs=enabled --gems=sinatra,watchr --debug
     # pipe into bash
     # -s not sure, more 'silent'? other meaning?
-    # "stable" version of RVM to use ("head" is current cutting edge)
+    # "stable" version of RVM to use
+    #   (note "head" is current cutting edge, sometimes needed to fix issues)
     # --rails install rails as well
     # --quiet-curl passes -s to curl, silent output
     # --autolibs=enabled not sure
     # --gems=sinatra,watchr install listed gems
     # --debug extra debugging output (use when reporting issues)
 
-	su -l vagrant -c '\curl -s -L https://get.rvm.io | bash -s head --rails --quiet-curl --autolibs=enabled --gems=sinatra,watchr --debug'
+	su -l vagrant -c '\curl -s -L https://get.rvm.io | bash -s stable --rails --quiet-curl --autolibs=enabled --gems=sinatra,watchr'
 
 	echo == Running post-rvm cleanup ==
 	# fix profile snafu, RVM drops path adjustment into users bash profile, overriding profile

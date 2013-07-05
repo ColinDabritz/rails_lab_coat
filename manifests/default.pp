@@ -29,6 +29,13 @@ package { [ 'build-essential',
 'sqlite3',
 'libsqlite3-dev',
 'nodejs',
+'gawk', # these packages (below) were being installed by RVM, moved here
+'autoconf',
+'libgdbm-dev',
+'libncurses5-dev',
+'automake',
+'bison',
+'libffi-dev'
 ]:
 ensure => installed,
 }
