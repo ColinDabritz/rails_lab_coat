@@ -111,6 +111,16 @@ Issues - troubleshooting
 ------
 Here are some errors we've encountered, and related fixes:
 
+* RVM breaks
+  * Durring the RVM portion of the install, an error occurs (various errors)
+  * Sometimes the stable version is broken, try the 'head' version
+  * To switch to head edit bootstrap.sh
+    * Find the main RVM invocation, using curl and https://get.rvm.io, (currently line 37)
+    * in the command after | bash -s
+    * replace the word 'stable' with 'head'
+    * this switches to the latest development branch, where the issue may already be fixed
+    * check for current RVM issues, statuses at https://github.com/wayneeseguin/rvm/issues
+    * consider filing a new issue if needed, include details, perhaps --debug output
 * vagrant - command not found
   * did you restart your terminal (command line) after installing?
   * did you install vagrant as a prerequisite?
