@@ -5,9 +5,9 @@ echo bootstrap.sh provisioning starting...
 # This bootstrap script is meant to be executed as part
 # of a vagrant provisioning process, in the context of the guest VM
 
-if [ -e "/home/vagrant/.rvm" ]  #only run RVM once
+if [ command -v rvm >/dev/null 2>&1 ]  #only run RVM once
 then
-	echo "RVM already installed"
+	echo "RVM already installed, skipping."
 else
     echo == Running rvm ==
 	# RVM official install command (from https://rvm.io/)
@@ -21,11 +21,11 @@ else
 	#	with other options or use a .curlrc file for this."
 	# http://rvm.io/deployment/best-practices
 	# -s silent (no progress bar)
-	# -L follows redirects
+	# -L location (follows redirects)
 
 	# bash -s stable --rails --quiet-curl --autolibs=enabled --gems=sinatra,watchr --debug
     # pipe into bash
-    # -s not sure, more 'silent'? other meaning?
+    # -s read commands from standard input (e.g. pipe)
     # "stable" version of RVM to use
     #   (note "head" is current cutting edge, sometimes needed to fix issues)
     # --rails install rails as well
@@ -51,5 +51,14 @@ else
 	rm -f /EMPTY
 fi
 
-echo bootstrap.sh provisioning completed...
+if [command -v heroku-toolbelt >/dev/null 2>&1]
+then
+	echo "heroku-toolbelt already installed, skipping."
+else
+	echo == installing heroku-toolbelt ==
+	# install heroku-toolbelt from website script
+	su -l vagrant -c 'wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh'
+fi
+
+echo bootstrap.sh provisioning completed.
 

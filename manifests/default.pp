@@ -18,7 +18,7 @@ class { 'apt_get_update':
 }
 
 # install RVM prereq packages
-package { [ 'build-essential',
+package { [ 'build-essential', # ruby/rvm requirements
 'zlib1g-dev',
 'libssl-dev',
 'libreadline-dev',
@@ -29,7 +29,7 @@ package { [ 'build-essential',
 'sqlite3',
 'libsqlite3-dev',
 'nodejs',
-'gawk', # these packages (below) were being installed by RVM, moved here
+'gawk',
 'autoconf',
 'libgdbm-dev',
 'libncurses5-dev',
