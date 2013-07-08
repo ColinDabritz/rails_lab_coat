@@ -8,11 +8,11 @@ The purpose of lab coat is to provide an easy, safe learning environment for rub
 Requires:
 
 * VirtualBox
-  * https://www.virtualbox.org/
+    * https://www.virtualbox.org/
 * vagrant
-  * http://www.vagrantup.com/
+    * http://www.vagrantup.com/
 * basic command line understanding
-  * http://linuxcommand.org/
+    * http://linuxcommand.org/
 
 Installers may be provided on the same thumb drive
 
@@ -42,15 +42,15 @@ Housekeeping:
 When a VM is running, for example after 'vagrant up', it consumes resources, especially the computers memory. When not in use, it is helpful to 'park' your virtual machine. Here are some useful vagrant commands, which you run on your primary machine in the rails_lab_coat folder.
 
 * vagrant up
-  * get the machine running, regardless of its previous condition
+    * get the machine running, regardless of its previous condition
 * vagrant suspend
-  * temporarily 'pause' the machine until needed again, frees resources and is quick to resume (with 'vagrant up')
+    * temporarily 'pause' the machine until needed again, frees resources and is quick to resume (with 'vagrant up')
 * vagrant halt
-  * shuts down the virtual machine, a more complete stop, takes time to boot, but may address issues that require rebooting the virtual machine.
+    * shuts down the virtual machine, a more complete stop, takes time to boot, but may address issues that require rebooting the virtual machine.
 * vagrant destroy
-  * halts and deletes the virtual machine, including any custom modifications, or installed packages. Note that the shared directory is NOT deleted in this case. Projects you put in the shared directory should remain.
+    * halts and deletes the virtual machine, including any custom modifications, or installed packages. Note that the shared directory is NOT deleted in this case. Projects you put in the shared directory should remain.
 * vagrant ssh
-  * 'jumps over' to the command line on the virtual machine. Most tutorial instructions should be run on the VM command line this way. Type 'exit' to get back to your normal machines command line. Also note vagrant commands must be entered from your normal command line, not the VM command line.
+    * 'jumps over' to the command line on the virtual machine. Most tutorial instructions should be run on the VM command line this way. Type 'exit' to get back to your normal machines command line. Also note vagrant commands must be entered from your normal command line, not the VM command line.
 
 If the virtual machine is in a bad state, just remember: vagrant destroy && vagrant up
 This command resets the VM to it's "factory default", although it will keep your shared directory.
@@ -64,22 +64,22 @@ This build script has worked on an OSX Mountain Lion laptop with git, virtual bo
 Steps:
 
 * clone or otherwise download the responsitory:
-  * git clone git@github.com:ColinDabritz/rails_lab_coat.git
-  * cd rails_lab_coat
+    * git clone git@github.com:ColinDabritz/rails_lab_coat.git
+    * cd rails_lab_coat
 * run the build script
-  * ./build.sh
-    * (d: may need execute permissions? chmod +x build.sh)
-  * the build script will take quite a while to run, and includes many steps:
-    * downloading the base puppet machine (if needed)
-    * setting up the machine, including a full apt-get upgrade
-    * installing rails using rvm with the classic http://rvm.io/ script
-    * Removing empty space and preparing the box for packaging
-    * packaging the prepared box into a box file
-    * copying the files into their final structure
-    * see scripts for exact details
-  * the rails_lab_coat directory should be prepared
+    * ./build.sh
+        * (d: may need execute permissions? chmod +x build.sh)
+    * the build script will take quite a while to run, and includes many steps:
+        * downloading the base puppet machine (if needed)
+        * setting up the machine, including a full apt-get upgrade
+        * installing rails using rvm with the classic http://rvm.io/ script
+        * Removing empty space and preparing the box for packaging
+        * packaging the prepared box into a box file
+        * copying the files into their final structure
+        * see scripts for exact details
+    * the rails_lab_coat directory should be prepared
 * copy the folder to a thumb drive
-  * (optional) copy installers for VirtualBox and vagrant to an 'installers' directory
+    * (optional) copy installers for VirtualBox and vagrant to an 'installers' directory
 * distribute at your local hacking event, and help welcome new members to your community!
 * Don't forget to update the image for each event!
 
@@ -90,12 +90,12 @@ This VM provides:
 * Sinatra
 * RVM
 * development tools
-  * git
-  * heroku toolbelt
+    * git
+    * heroku toolbelt
 * Ruby Koans
 * To be added:
-  * Full Hartl Tutorial Compatability
-  * watchr (to run koans, nice tool)
+    * Full Hartl Tutorial Compatability
+    * watchr (to run koans, nice tool)
 
 This VM does NOT provide:
 
@@ -112,29 +112,29 @@ Issues - troubleshooting
 Here are some errors we've encountered, and related fixes:
 
 * RVM breaks
-  * Durring the RVM portion of the install, an error occurs (various errors)
-  * Sometimes the stable version is broken, try the 'head' version
-  * To switch to head edit bootstrap.sh
-    * Find the main RVM invocation, using curl and https://get.rvm.io, (currently line 37)
-    * in the command after | bash -s
-    * replace the word 'stable' with 'head'
-    * this switches to the latest development branch, where the issue may already be fixed
-    * check for current RVM issues, statuses at https://github.com/wayneeseguin/rvm/issues
-    * consider filing a new issue if needed, include details, perhaps --debug output
+    * Durring the RVM portion of the install, an error occurs (various errors)
+    * Sometimes the stable version is broken, try the 'head' version
+    * To switch to head edit bootstrap.sh
+        * Find the main RVM invocation, using curl and https://get.rvm.io, (currently line 37)
+        * in the command after | bash -s
+        * replace the word 'stable' with 'head'
+        * this switches to the latest development branch, where the issue may already be fixed
+        * check for current RVM issues, statuses at https://github.com/wayneeseguin/rvm/issues
+        * consider filing a new issue if needed, include details, perhaps --debug output
 * vagrant - command not found
-  * did you restart your terminal (command line) after installing?
-  * did you install vagrant as a prerequisite?
+    * did you restart your terminal (command line) after installing?
+    * did you install vagrant as a prerequisite?
 * (vagrant without VirtualBox - What error does this give?)
-  * did you install VirtualBox as a prerequisite?
+    * did you install VirtualBox as a prerequisite?
 * My machine is really slow even when I'm not using rails
-  * the virtual machine consumes resoruces as long as it is on. After using the machine try: vagrant suspend
-  * See section on 'housekeeping' above
+    * the virtual machine consumes resoruces as long as it is on. After using the machine try: vagrant suspend
+    * See section on 'housekeeping' above
 * vagrant up fails with VBoxManage "NS_ERROR_CALL_FAILED" error
-  * This was a temporary issue in version 4.2.14 see ticket
-  * https://www.virtualbox.org/ticket/11895
-  * Workarounds are listed in the ticket, e.g. uninstall VirtualBox and resintall an older version
+    * This was a temporary issue in version 4.2.14 see ticket
+    * https://www.virtualbox.org/ticket/11895
+    * Workarounds are listed in the ticket, e.g. uninstall VirtualBox and resintall an older version
 * I have a messed up 'railslab' box and/or vagrant (in theory)
     * try removing the virtual machines and backing boxes
-      * ./clean.sh
-      * ./remove_boxes.sh
-      * start your build over again
+        * ./clean.sh
+        * ./remove_boxes.sh
+        * start your build over again
