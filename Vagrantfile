@@ -2,13 +2,13 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  # This 'Cosmodrome' vagrant is meant to automatically build the
-  # 'Rocket' box for packaging into the learning base box.
+  # This vagrant machine generates a rails lab coat instance.
   # It is based off puppet labs base box
   # from http://puppet-vagrant-boxes.puppetlabs.com/
   # Ubuntu Server 12, x64, VirtualBox target, "plain" with puppet etc
   config.vm.box = "PuppetUbuntu12Vbox"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
+  config.vm.hostname = "rails-lab-coat-build"
 
   # provision with puppet
   config.vm.provision :puppet do |puppet|
