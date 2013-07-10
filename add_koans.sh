@@ -11,4 +11,6 @@ echo == installing ruby koans ==
 (cd ruby_koans;rake gen)
 
 #then distribute the koans dir.
-mv ruby_koans/koans ./rails_lab_coat/shared/
+cp -r ruby_koans/koans ./rails_lab_coat/shared/
+
+echo ruby koans installed...

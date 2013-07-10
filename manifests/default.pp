@@ -17,30 +17,36 @@ class { 'apt_get_update':
   stage => preinstall
 }
 
-# install RVM prereq packages
-package { [ 'build-essential', # ruby/rvm requirements
-'zlib1g-dev',
-'libssl-dev',
-'libreadline-dev',
-'git-core',
-'libxml2',
-'libxml2-dev',
-'libxslt1-dev',
-'sqlite3',
-'libsqlite3-dev',
-'nodejs',
-'gawk',
-'autoconf',
-'libgdbm-dev',
-'libncurses5-dev',
-'automake',
-'bison',
-'libffi-dev'
-]:
-ensure => installed,
+# add a gemrc before RVM install that skips ri and rdoc
+file {
+  "/etc/gemrc":
+    ensure => present,
+    content => "gem: --no-rdoc --no-ri\n",
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
 }
 
-# RMagick system dependencies
-package { ['libmagickwand4', 'libmagickwand-dev']:
+# install RVM prereq packages
+package { [ 'build-essential', # ruby/rvm requirements
+          'zlib1g-dev',
+          'libssl-dev',
+          'libreadline-dev',
+          'git-core',
+          'libxml2',
+          'libxml2-dev',
+          'libxslt1-dev',
+          'sqlite3',
+          'libsqlite3-dev',
+          'nodejs',
+          'gawk',
+          'autoconf',
+          'libgdbm-dev',
+          'libncurses5-dev',
+          'automake',
+          'bison',
+          'libffi-dev',
+          'tree', # visualize file structures, nice for learning
+          ]:
 ensure => installed,
 }
