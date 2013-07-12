@@ -5,9 +5,9 @@ echo bootstrap.sh provisioning starting...
 # This bootstrap script is meant to be executed as part
 # of a vagrant provisioning process, in the context of the guest VM
 
-if [ command -v rvm >/dev/null 2>&1 ]  #only run RVM once
+if [ -d /home/vagrant/.rvm ]  #only run RVM once
 then
-	echo "RVM already installed, skipping."
+	echo "RVM already installed, skipping..."
 else
     echo == Running rvm ==
 	# RVM official install command (from https://rvm.io/)
@@ -51,9 +51,12 @@ else
 	rm -f /EMPTY
 fi
 
-if [command -v heroku-toolbelt >/dev/null 2>&1]
+# check if installed (return value)
+dpkg-query -l heroku &> /dev/null 
+# return value in $? indicates installed
+if [ ! $? ] # the heroku package is installed
 then
-	echo "heroku-toolbelt already installed, skipping."
+	echo "heroku-toolbelt already installed, skipping..."
 else
 	echo == installing heroku-toolbelt ==
 	# install heroku-toolbelt from website script

@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   # to install it from, if it doesn't already have it installed
   config.vm.box = "railslab"
   config.vm.box_url = "./box/railslab.box"
-  config.vm.hostname = "rails-lab-coat"
+  config.vm.hostname = "rails-lab-coat.vagrantup.com"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,

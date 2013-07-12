@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   # Ubuntu Server 12, x64, VirtualBox target, "plain" with puppet etc
   config.vm.box = "PuppetUbuntu12Vbox"
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
-  config.vm.hostname = "rails-lab-coat-build"
+  config.vm.hostname = "rails-lab-coat-build.vagrantup.com"
 
   # provision with puppet
   config.vm.provision :puppet do |puppet|
