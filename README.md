@@ -3,7 +3,7 @@ Rails Lab Coat
 
 Tools for doing rails science! (and cleaning up after yourself)
 
-The purpose of lab coat is to provide an easy, safe learning environment for ruby on rails. We found that often new developers in our rails community spent thier entire first evening just atempting to get a working rails environment on their computers, and even then many were unsuccessful. Lab coat can get a new developer running rails in less than 10 minutes (a bit longer if they are unfamiliar with the command line). Later on, once they are more familiar with the environment, and tools, they can transition to a 'native' install on their main system with much more confidence and explore from there. It also provides a nice 'baseline' environment for experimentation, or teaching in a computer lab environment.
+The purpose of lab coat is to provide an easy, safe learning environment for ruby on rails. We found that often new developers in our rails community spent their entire first evening just attempting to get a working rails environment on their computers, and even then many were unsuccessful. Lab coat can get a new developer running rails in less than 10 minutes (a bit longer if they are unfamiliar with the command line). Later on, once they are more familiar with the environment, and tools, they can transition to a 'native' install on their main system with much more confidence and explore from there. It also provides a nice 'baseline' environment for experimentation, or teaching in a computer lab environment.
 
 Requires:
 
@@ -57,13 +57,13 @@ This command resets the VM to it's "factory default", although it will keep your
 
 Build Process
 -------------
-The respository here provides the tools to create a rails_lab_coat folder with a pre-made vagrant box file and vagrant file to set up a virtual machine ready for ruby-on-rails development. It was build for weekly user group use, and is intended to be rebuilt for each event to keep the system current.
+The repository here provides the tools to create a rails_lab_coat folder with a pre-made vagrant box file and vagrant file to set up a virtual machine ready for ruby-on-rails development. It was build for weekly user group use, and is intended to be rebuilt for each event to keep the system current.
 
 This build script has worked on an OSX Mountain Lion laptop with git, virtual box, and vagrant installed. It may work on a similarly configured linux machine, but it has not been tested. The primary script is a bash script and will probably not work on windows.
 
 Steps:
 
-* clone or otherwise download the responsitory:
+* clone or otherwise download the repository:
     * git clone git@github.com:ColinDabritz/rails_lab_coat.git
     * cd rails_lab_coat
 * run the build script
@@ -94,7 +94,7 @@ This VM provides:
     * heroku toolbelt
 * Ruby Koans
 * To be added:
-    * Full Hartl Tutorial Compatability
+    * Full Hartl Tutorial compatibility
     * watchr (to run koans, nice tool)
 
 This VM does NOT provide:
@@ -112,7 +112,7 @@ Issues - troubleshooting
 Here are some errors we've encountered, and related fixes:
 
 * RVM breaks
-    * Durring the RVM portion of the install, an error occurs (various errors)
+    * During the RVM portion of the install, an error occurs (various errors)
     * Sometimes the stable version is broken, try the 'head' version
     * To switch to head edit bootstrap.sh
         * Find the main RVM invocation, using curl and https://get.rvm.io, (currently line 37)
@@ -127,7 +127,7 @@ Here are some errors we've encountered, and related fixes:
 * (vagrant without VirtualBox - What error does this give?)
     * did you install VirtualBox as a prerequisite?
 * My machine is really slow even when I'm not using rails
-    * the virtual machine consumes resoruces as long as it is on. After using the machine try: vagrant suspend
+    * the virtual machine consumes resources as long as it is on. After using the machine try: vagrant suspend
     * See section on 'housekeeping' above
 * vagrant up fails with VBoxManage "NS_ERROR_CALL_FAILED" error
     * This was a temporary issue in version 4.2.14 see ticket
